@@ -1,0 +1,200 @@
+body{
+    font-family: "Pront", "Arial", "sand-serif";
+}
+.nav-wrapper{
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 15px 20px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 30% auto;
+}
+.nav-wrapper a{
+    letter-spacing: .1em;
+    text-decoration: none;
+    font-display: bold;
+    color: #000000;
+}
+.nav-wrapper a:hover{
+    cursor: pointer;
+    color: #eee;
+}
+.list-item{
+    margin-left: 30px;
+    text-transform: capitalize;
+    padding: 10px;
+}
+.logo{
+    font-weight: bold;
+    font-size: 24px;
+}
+.nav-wrapper ul li{
+    display: inline;
+    list-style-type: none;
+}
+.main-wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.burger-icon{
+    display: none;
+}
+.wrapper{
+    max-width: 100%;
+    margin:: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    color: #fff;
+    grid-template-areas: 
+    "featuredMain featuredMain featuredSub"
+    "contentMain contentMain contentSub"
+    ;
+}
+.wrapper > .sub-featured,
+.wrapper > .sub-featured > div,
+.wrapper > .main-content,
+.wrapper > .main-sidebar{
+    padding: 20px;
+}
+.featured{
+    grid-area: featuredMain;
+    min-height: 500px;
+    background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.6))
+    border-box, url(https://source.unsplash.com/1600x900/?Coding) no-repeat center center;
+    background-repeat: no-repeat; 
+    display: grid;
+    align-content: flex-end;
+}
+.sub-featured{
+    margin: 0 auto;
+    grid-area: featuredSub;
+    background-image: url(Img/cloud-4273197_1280.png);
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+.sub1:hover, .sub2:hover, .sub3:hover{
+    cursor: pointer;
+}
+.sub1{
+    color: #333;
+    background-color: #eee transparent;
+    border: 2px solid #333;
+}
+.sub2{
+    color: #333;
+    background-color: #eee transparent;
+    border: 2px solid #333;
+}
+.sub3{
+    color: #333;
+    background-color: #eee transparent;
+    border: 2px solid #333;
+}
+.copyright{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    grid-column: 1/-1;
+}
+.main-content{
+    grid-area: contentMain;
+    background-image: url(Img/QuedtionMaek.png);
+    background-size: cover;
+    font-size: 2em;
+    color: #000; 
+}
+.main-sidebar{
+    grid-area: contentSub;
+    background-image: url(Img/travel-4270800_1280.png);
+    background-size: cover;
+    color: #333;
+}
+.footer{
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: minmax(20px,300px) minmax(20px,300px) minmax(20px,300px) minmax(20px,300px);
+    justify-content: center;
+    grid-template-rows: 1fr 1fr;
+    background-color: #333;
+    color: #fff;
+
+}
+
+/* TABLET MEDIA QUERY */
+@media screen and (max-width: 950px){
+    .wrapper{
+        grid-template-areas: 
+        "featuredMain featuredMain featuredMain"
+        "featuredSub featuredSub featuredSub"
+        "contentMain contentMain contentSub"
+        ;
+    }
+    .sub-featured{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .nav-items{
+        grid-column: 1/5;
+        text-align: center;
+    }
+    .logo{
+        grid-column: 1/5;
+        text-align: center;
+    }
+    .nav-wrapper{
+        margin-top: 0;
+    }
+}
+/*MOBLIE MEDIA QUERY*/
+@media screen and (max-width: 690px){
+    .logo{
+        grid-column: 1/3;
+    }
+    .nav-items{
+        grid-column: 1/5;
+        text-align: center;
+    }
+    .nav-wrapper ul{
+        padding: 0;
+        margin: 0;
+    }
+    .nav-wrapper ul li{
+        display: block;
+    }
+    .burger-icon{
+        display: inline-block;
+        grid-column: 4/5;
+        border: 2px solid #333;
+        color: #333;
+        padding: 10px;
+        font-weight: bold;
+        border-radius: 3px;
+        justify-self: end;
+    }
+    .burger-icon:hover{
+        cursor: hand;
+    }
+    .wrapper{
+        grid-template-areas:
+        "featuredMain featuredMain featuredMain"
+        "contentMain contentMain contentMain"
+        "featuredSub featuredSub featuredSub"
+        "contentSub contentSub contentSub"
+        ;
+    }
+    .sub-featured{
+        grid-template-columns: 1fr;
+    }
+    .footer > div{
+        grid-column: 1/-1;
+
+    }
+}
+.mobile-show{
+    display: block;
+}
+.mobile-hide{
+    display: none;
+}
